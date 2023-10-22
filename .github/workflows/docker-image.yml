@@ -8,7 +8,7 @@ on:
 env:
   REGISTRY: ghcr.io
   #IMAGE_NAME: ${{ github.repository }}    
-  IMAGE_NAME: /eugenberd/robo_shop_cart
+  IMAGE_NAME: /eugenberd/robot_shop/cart
   #PACKAGE_VERSION: hhjg
 
 jobs:
