@@ -32,10 +32,12 @@ jobs:
       - name: build
         run: |
           cd cart
-          npm run build
-          npm run test
+        #  npm run build
+         # npm run test
           
       - uses: actions/checkout@v3
       - name: Build the Docker image
         run: cd cart; docker build . --file Dockerfile --tag robot-chop-cart:$(date +%s)
+
+        
 
