@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd cart
-          cp package.json /opt/server/
+          # cp package.json /opt/server/
           npm install
           npm ci 
           
