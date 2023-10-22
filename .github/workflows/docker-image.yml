@@ -23,6 +23,8 @@ jobs:
       # install applicaion dependencies
       - name: Install dependencies
         run: |
+          cd cart
+          package.json /opt/server/
           npm install
           npm ci 
           
