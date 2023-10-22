@@ -11,8 +11,28 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: cd cart; docker build . --file Dockerfile --tag robot-chop-cart:$(date +%s)
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: setup node
+        uses: actions/setup-node@master
+        with:
+          node-version: 14
+
+      # install applicaion dependencies
+      - name: Install dependencies
+        run: |
+          npm install
+          npm ci 
+          
+      # build and test the apps     
+      - name: build
+        run: |
+          npm run build
+          npm run test
+          
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: cd cart; docker build . --file Dockerfile --tag robot-chop-cart:$(date +%s)
+
