@@ -25,12 +25,13 @@ jobs:
         run: |
           cd cart
           # cp package.json /opt/server/
-          npm install
-          npm ci 
+          cd cart; npm install
+          cd cart; npm ci 
           
       # build and test the apps     
       - name: build
         run: |
+          cd cart
           npm run build
           npm run test
           
