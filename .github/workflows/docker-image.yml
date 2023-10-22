@@ -9,7 +9,7 @@ env:
   REGISTRY: ghcr.io
   # IMAGE_NAME: ${{ github.repository }}    
   IMAGE_NAME: robo_shop_cart
-  PACKAGE_VERSION: 1
+  PACKAGE_VERSION: "1"
 
 jobs:
 
